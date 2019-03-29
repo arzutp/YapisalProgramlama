@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void AsalBulma()
+{
+    int altS;
+    int ustS;
+    printf("alt sinir giriniz: ");
+    scanf("%d",&altS);
+    printf("ust sinir giriniz: ");
+    scanf("%d",&ustS);
+    if(ustS<2)
+    {
+        printf("bu aralikta asal sayi yoktur...");
+    }
+    else
+    {
+        for(altS;altS<ustS;altS++)
+        {
+            int kontrol=0;
+            for(int i=2; i<altS; i++)
+            {
+                if(altS%i==0)
+                {
+                    kontrol=1;
+                }
+
+            }
+            if(kontrol==0)
+            {
+                printf("%d bir asal sayidir. \n",altS);
+            }
+        }
+    }
+}
+
+void kucukBul()
+{
+    int a,b,c;
+    printf("3 adet sayi giriniz: ");
+    scanf("%d%d%d",&a,&b,&c);
+    if(a<b)
+    {
+        if(a<c)
+        {
+            printf("%d kucuktur",a);
+        }
+        else{
+        printf("%d kucktur",c);
+        }
+
+    }
+    else
+    {
+        if(b<c)
+        {
+            printf("%d kucuktur",b);
+        }
+        else{
+        printf("%d kucuktur",c);
+        }
+    }
+
+}
+
+int main()
+{
+    int islem;
+    printf("\n1- asal sayilari bulma\n2- kucuk sayi bulma\n3- cikis\n");
+    printf("yapmak istediginiz islemi giriniz: ");
+    scanf("%d",&islem);
+    while(islem!=3)
+    {
+        if(islem==1)
+        {
+            AsalBulma();
+            printf("1- asal sayilari bulma\n2- kucuk sayi bulma\n3- cikis\n");
+            printf("yapmak istediginiz islemi giriniz: ");
+            scanf("%d",&islem);
+        }
+        else if(islem==2)
+        {
+            kucukBul();
+            printf("1- asal sayilari bulma\n2- kucuk sayi bulma\n3- cikis\n");
+            printf("yapmak istediginiz islemi giriniz: ");
+            scanf("%d",&islem);
+        }
+        else
+        {
+            printf("hatali deger girdiniz...\n");
+            printf("1- asal sayilari bulma\n2- kucuk sayi bulma\n3- cikis\n");
+            printf("yapmak istediginiz islemi giriniz: ");
+            scanf("%d",&islem);
+        }
+
+    }
+    return 0;
+}
