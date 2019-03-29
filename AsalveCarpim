@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+#include<conio.h>
+void asalMi()
+{
+    int sayi;
+    printf("bir sayi giriniz: ");
+    scanf("%d",&sayi);
+    if(sayi%2==0)
+    {
+        if(sayi==2)
+        {
+            printf("%d asaldir.",sayi);
+        }
+        else
+        {
+            printf("%d asal degildir.",sayi);
+        }
+    }
+    else
+    {
+        int i=3;
+        while(i<=sqrt(sayi))
+        {
+            if(sayi%i==0)
+            {
+                printf("%d asal sayi degildir.",sayi);
+                break;
+            }
+            else
+            {
+                i+=2;
+            }
+        }
+        if(sayi%i!=0)
+        {
+            printf("%d asaldir",sayi);
+        }
+    }
+}
+
+int sayiCarpim(int a, int b)
+{
+    return a*b;
+}
+int main()
+{
+    int islem;
+    printf("\n1- asal sayi kontrol\n2- sayilarin carpimi\n3- cikis\n");
+    printf("yapmak istediginiz islemi giriniz: ");
+    scanf("%d",&islem);
+    while(islem!=3)
+    {
+        if(islem==1)
+        {
+            asalMi();
+            printf("\n1- asal sayi kontrol\n2- sayilarin carpimi\n3- cikis\n");
+            printf("yapmak istediginiz islemi giriniz: ");
+            scanf("%d",&islem);
+        }
+        else if(islem==2)
+        {
+            srand(time(NULL));
+            int a=1+rand()%20;
+            int b=2+rand()%99;
+            printf("%d\n%d\n%d",a,b,sayiCarpim(a,b));
+            printf("\n1- asal sayi kontrol\n2- sayilarin carpimi\n3- cikis\n");
+            printf("yapmak istediginiz islemi giriniz: ");
+            scanf("%d",&islem);
+        }
+        else
+        {
+            printf("hatali deger girdiniz...\n");
+            printf("\n1- asal sayi kontrol\n2- sayilarin carpimi\n3- cikis\n");
+            printf("yapmak istediginiz islemi giriniz: ");
+            scanf("%d",&islem);
+        }
+
+    }
+
+    return 0;
+}
