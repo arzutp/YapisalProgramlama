@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+int main()
+{
+    int islem;
+    printf("Islemler...");
+    printf("\n1-Toplam Bul\n2-Kuvvet Bul\n3-Cikis");
+    printf("\nYapmak istediginiz islemi secin: ");
+    scanf("%d",&islem);
+    while(islem!=3){
+        if(islem==1){
+            srand(time(NULL));
+            int a=rand()%100;
+            int b=100+rand()%100;
+            printf("a= %d b= %d\nToplam: %d",a,b,toplamBulma(a,b));
+        }
+        else if(islem==2){
+            int x;
+            int y;
+            printf("\nKuvvetini almak istediginiz sayiyi ve kuvveti girin: ");
+            scanf("%d%d",&x,&y);
+            printf("%d uzeri %d = %d",x,y,kuvvetBulma(x,y));
+        }
+        else if(islem==3){
+            break;
+        }
+        else{
+            printf("Hatali islem... ");
+        }
+        printf("\nYapmak istediginiz islemi secin: ");
+        scanf("%d",&islem);
+    }
+    printf("Cikis yapiliyor...");
+
+    return 0;
+}
+
+int kuvvetBulma(a,b){
+    if(b==0){
+        return 1;
+    }
+    else{
+        return a*kuvvetBulma(a,b-1);
+    }
+}
+
+int toplamBulma(x,y){
+    return x+y;
+}
