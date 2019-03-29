@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+int main()
+{
+    srand(time(NULL));
+    int sayi=rand()%100;
+    int cikis=1;
+    int tahmin;
+
+    while(cikis==1)
+    {
+        printf("sayi tahmin ediniz: ");
+        scanf("%d",&tahmin);
+        if(tahmin==sayi)
+        {
+            printf("tebrikler! devam(1) cikis(-1)");
+            scanf("%d",&cikis);
+            if(cikis==-1)
+            {
+                printf("cikiliyor...");
+            }
+        }
+        else if(tahmin>sayi)
+        {
+            printf("daha kucuk deger giriniz...");
+        }
+        else if(tahmin<sayi)
+        {
+            printf("daha buyuk deger giriniz...");
+        }
+    }
+    return 0;
+}
