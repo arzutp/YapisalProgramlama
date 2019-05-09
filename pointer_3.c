@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-///deðer deðiþtirme
+///deger degistirme
 ///call by reference(adresle gönderme)
 
 void degistir(int *a,int *b)
